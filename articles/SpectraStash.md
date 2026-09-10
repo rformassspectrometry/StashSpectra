@@ -68,8 +68,8 @@ data files from the *MsDataHub* package.
     ##  ... 34 more variables/columns.
     ## 
     ## file(s):
-    ## 83772ada9c4_7859
-    ## 837246f40a8_7860
+    ## 98e1c57d169_7859
+    ## 98e4649082a_7860
 
 We next filter the data restricting to spectra and mass peaks with a
 retention time between 20 and 200 seconds and an *m/z* between 110 and
@@ -94,12 +94,12 @@ retention time between 20 and 200 seconds and an *m/z* between 110 and
     ##  ... 34 more variables/columns.
     ## 
     ## file(s):
-    ## 83772ada9c4_7859
-    ## 837246f40a8_7860
+    ## 98e1c57d169_7859
+    ## 98e4649082a_7860
     ## Lazy evaluation queue: 1 processing step(s)
     ## Processing:
-    ##  Filter: select retention time [20..200] on MS level(s)  [Mon Sep  7 08:35:12 2026]
-    ##  Filter: select peaks with an m/z within [110, 120] [Mon Sep  7 08:35:12 2026]
+    ##  Filter: select retention time [20..200] on MS level(s)  [Thu Sep 10 05:56:10 2026]
+    ##  Filter: select peaks with an m/z within [110, 120] [Thu Sep 10 05:56:10 2026]
 
 We next store this `Spectra` object to a *SpectraStash* using the
 [`saveMsObject()`](https://rdrr.io/pkg/MsStash/man/saveMsObject.html)
@@ -113,7 +113,7 @@ The content of the stash folder is:
 
 [`library`](https://rdrr.io/r/base/library.html)`(`[`fs`](https://fs.r-lib.org)`)`` `[`dir_tree`](https://fs.r-lib.org/reference/dir_tree.html)`(``d``)`
 
-    ## /tmp/RtmpvUjwcS/filea4b57774774/spectra_stash
+    ## /tmp/Rtmp82B4TR/fileba252519aa3/spectra_stash
     ## ├── OBJECT
     ## ├── _environment.json
     ## ├── backend
@@ -162,12 +162,12 @@ restored again with
     ##  ... 25 more variables/columns.
     ## 
     ## file(s):
-    ## 83772ada9c4_7859
-    ## 837246f40a8_7860
+    ## 98e1c57d169_7859
+    ## 98e4649082a_7860
     ## Lazy evaluation queue: 1 processing step(s)
     ## Processing:
-    ##  Filter: select retention time [20..200] on MS level(s)  [Mon Sep  7 08:35:12 2026]
-    ##  Filter: select peaks with an m/z within [110, 120] [Mon Sep  7 08:35:12 2026]
+    ##  Filter: select retention time [20..200] on MS level(s)  [Thu Sep 10 05:56:10 2026]
+    ##  Filter: select peaks with an m/z within [110, 120] [Thu Sep 10 05:56:10 2026]
 
 We need to specify the type of the object to restore with the first
 parameter of the function - in our case
@@ -201,8 +201,8 @@ from *alabaster.base*:
     ##  ... 25 more variables/columns.
     ## 
     ## file(s):
-    ## 83772ada9c4_7859
-    ## 837246f40a8_7860
+    ## 98e1c57d169_7859
+    ## 98e4649082a_7860
 
 Or using
 [`readMsObject()`](https://rdrr.io/pkg/MsStash/man/saveMsObject.html):
@@ -226,8 +226,8 @@ Or using
     ##  ... 25 more variables/columns.
     ## 
     ## file(s):
-    ## 83772ada9c4_7859
-    ## 837246f40a8_7860
+    ## 98e1c57d169_7859
+    ## 98e4649082a_7860
 
 ### Creating self-contained stashes
 
@@ -258,12 +258,12 @@ MS data files **into** the stash folder:
 
 [`dir_tree`](https://fs.r-lib.org/reference/dir_tree.html)`(``d2``)`
 
-    ## /tmp/RtmpvUjwcS/spectra_stash2
+    ## /tmp/Rtmp82B4TR/spectra_stash2
     ## ├── OBJECT
     ## ├── _environment.json
     ## ├── backend
-    ## │   ├── 837246f40a8_7860
-    ## │   ├── 83772ada9c4_7859
+    ## │   ├── 98e1c57d169_7859
+    ## │   ├── 98e4649082a_7860
     ## │   ├── OBJECT
     ## │   └── spectra_data
     ## │       ├── OBJECT
@@ -316,9 +316,9 @@ in memory. Below we change the backend of our `sps` object to
     ##  ... 34 more variables/columns.
     ## Lazy evaluation queue: 1 processing step(s)
     ## Processing:
-    ##  Filter: select retention time [20..200] on MS level(s)  [Mon Sep  7 08:35:12 2026]
-    ##  Filter: select peaks with an m/z within [110, 120] [Mon Sep  7 08:35:12 2026]
-    ##  Switch backend from MsBackendMzR to MsBackendMemory [Mon Sep  7 08:35:13 2026]
+    ##  Filter: select retention time [20..200] on MS level(s)  [Thu Sep 10 05:56:10 2026]
+    ##  Filter: select peaks with an m/z within [110, 120] [Thu Sep 10 05:56:10 2026]
+    ##  Switch backend from MsBackendMzR to MsBackendMemory [Thu Sep 10 05:56:12 2026]
 
 We next stash this updated `Spectra` object removing first the stash
 directory of the previous SpectraStash (because overwriting stash
@@ -331,7 +331,7 @@ structure:
 
 [`dir_tree`](https://fs.r-lib.org/reference/dir_tree.html)`(``d2``)`
 
-    ## /tmp/RtmpvUjwcS/spectra_stash2
+    ## /tmp/Rtmp82B4TR/spectra_stash2
     ## ├── OBJECT
     ## ├── _environment.json
     ## ├── backend
@@ -384,9 +384,9 @@ can restore the `Spectra` object with:
     ##  ... 25 more variables/columns.
     ## Lazy evaluation queue: 1 processing step(s)
     ## Processing:
-    ##  Filter: select retention time [20..200] on MS level(s)  [Mon Sep  7 08:35:12 2026]
-    ##  Filter: select peaks with an m/z within [110, 120] [Mon Sep  7 08:35:12 2026]
-    ##  Switch backend from MsBackendMzR to MsBackendMemory [Mon Sep  7 08:35:13 2026]
+    ##  Filter: select retention time [20..200] on MS level(s)  [Thu Sep 10 05:56:10 2026]
+    ##  Filter: select peaks with an m/z within [110, 120] [Thu Sep 10 05:56:10 2026]
+    ##  Switch backend from MsBackendMzR to MsBackendMemory [Thu Sep 10 05:56:12 2026]
 
 In addition, we can restore the `MsBackendMemory` with:
 
@@ -461,14 +461,14 @@ storage format for the in-memory `MsBackendMemory` (note the double
     ## [8] base     
     ## 
     ## other attached packages:
-    ##  [1] alabaster.base_1.13.3 fs_2.1.0              MsDataHub_1.13.1     
-    ##  [4] SpectraStash_0.99.1   MsStash_0.99.0        Spectra_1.23.4       
+    ##  [1] alabaster.base_1.13.4 fs_2.1.0              MsDataHub_1.13.1     
+    ##  [4] SpectraStash_0.99.2   MsStash_0.99.0        Spectra_1.23.4       
     ##  [7] BiocParallel_1.47.0   S4Vectors_0.51.9      BiocGenerics_0.59.12 
     ## [10] generics_0.1.4        BiocStyle_2.41.0     
     ## 
     ## loaded via a namespace (and not attached):
     ##  [1] tidyselect_1.2.1         dplyr_1.2.1              blob_1.3.0              
-    ##  [4] filelock_1.0.3           Biostrings_2.81.8        fastmap_1.2.0           
+    ##  [4] filelock_1.0.3           Biostrings_2.81.9        fastmap_1.2.0           
     ##  [7] BiocFileCache_3.3.0      digest_0.6.39            lifecycle_1.0.5         
     ## [10] cluster_2.1.8.3          ProtGenerics_1.45.0      KEGGREST_1.53.6         
     ## [13] RSQLite_3.53.3           magrittr_2.0.5           compiler_4.6.1          

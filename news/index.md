@@ -2,6 +2,10 @@
 
 ## *SpectraStash* 0.97
 
+### Changes in version 0.99.2
+
+- Complete unit test coverage to 100%.
+
 ### Changes in version 0.99.1
 
 - Address review comments.
